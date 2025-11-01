@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini OS - Win7 Edition</title>
+    <link rel="stylesheet" href="/index.css" />
+    <style type="text/tailwindcss">
+      @layer utilities {
+        /* Windows 7 "Aero" style buttons */
+        .llm-button {
+          @apply bg-gradient-to-b from-gray-100 to-gray-300 text-black border border-gray-400 rounded-md py-1 px-4 m-1 cursor-pointer font-semibold text-center shadow-sm transition-all hover:border-blue-500 hover:from-blue-100 hover:to-blue-300 active:from-gray-300 active:to-gray-100 active:shadow-inner;
+        }
+        .llm-text {
+          @apply m-2 text-base text-black leading-relaxed;
+        }
+        .llm-title {
+          @apply font-semibold text-lg text-blue-800 mb-3 mt-1 mx-2;
+        }
+        .llm-input,
+        .llm-textarea {
+          @apply m-2 p-2 w-full border border-gray-400 rounded-md bg-white font-sans text-black text-sm shadow-inner transition-all focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-400;
+        }
+        .llm-textarea {
+          @apply min-h-[120px];
+        }
+        .llm-container {
+          @apply w-full flex flex-col items-start mb-4 gap-2 p-2;
+        }
+        .llm-row {
+          @apply w-full flex items-center mb-2 gap-2;
+        }
+        .llm-label {
+          @apply mr-1 text-sm text-black;
+        }
+        /* Styles for generated icons to match classic desktop icons */
+        .icon {
+          @apply w-24 h-28 flex flex-col items-center justify-start text-center m-2 p-2 cursor-pointer select-none rounded-md transition-colors hover:bg-blue-400/30 focus:bg-blue-400/50 focus:outline-none focus:ring-1 focus:ring-blue-500 border border-transparent focus:border-blue-500;
+        }
+        .icon-image {
+          @apply text-5xl mb-2 drop-shadow-md;
+        }
+        .icon-label {
+          @apply text-sm text-white font-medium break-words max-w-full leading-tight shadow-black [text-shadow:_1px_1px_2px_rgb(0_0_0_/_80%)];
+        }
+
+        /* Windows 7 Taskbar */
+        .taskbar {
+          @apply h-10 w-full bg-gradient-to-b from-blue-400/80 to-blue-600/90 backdrop-blur-md border-t border-blue-300/50 shadow-lg flex items-center justify-between px-2 select-none flex-shrink-0;
+        }
+        .start-button {
+          @apply w-14 h-8 rounded-full bg-gradient-to-b from-cyan-300/90 to-blue-500/90 flex items-center justify-center shadow-md border border-white/50 transition-all hover:shadow-lg hover:from-cyan-200 active:from-blue-600;
+        }
+        .taskbar-icon {
+          @apply w-9 h-9 flex items-center justify-center text-2xl rounded-md transition-all hover:bg-white/30 active:bg-white/10 cursor-pointer;
+        }
+        .system-tray {
+          @apply h-full flex items-center justify-center text-white text-xs font-semibold px-3 bg-black/10 rounded-md border border-white/20 shadow-inner;
+        }
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+          "react/": "https://esm.sh/react@^19.1.0/",
+          "react": "https://esm.sh/react@^19.1.0",
+          "@google/genai": "https://esm.sh/@google/genai@^1.5.1",
+          "@tailwindcss/browser": "https://esm.sh/@tailwindcss/browser@^4.1.10"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
